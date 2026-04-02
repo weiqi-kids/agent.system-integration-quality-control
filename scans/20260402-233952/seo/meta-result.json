@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-02T23:40:46Z",
+  "summary": {
+    "pass": 8,
+    "fail": 2,
+    "total": 10
+  },
+  "checks": [{"item": "title", "status": "pass", "value": "首頁 - 大翔人力資源管理顧問有限公司"},{"item": "description", "status": "pass", "value": "近年來，為配合國內經濟發展及社會的實際需要，分別對重大公共工程、製造業重大投資案、看護工、家庭幫傭及..."},{"item": "og:title", "status": "pass", "value": "首頁 - 大翔人力資源管理顧問有限公司..."},{"item": "og:description", "status": "pass", "value": "近年來，為配合國內經濟發展及社會的實際需要，分別對重大公共工程、製造業重大投資案..."},{"item": "og:image", "status": "fail", "expected": "必須存在", "actual": ""},{"item": "og:url", "status": "pass", "value": "https://dahsiang.com.tw"},{"item": "og:type", "status": "fail", "expected": "article", "actual": "website"},{"item": "article:published_time", "status": "pass", "value": "2022-03-25T18:26:40+08:00"},{"item": "article:modified_time", "status": "pass", "value": "2023-04-07T13:11:34+08:00"},{"item": "twitter:card", "status": "pass", "value": "summary_large_image"}]
+}

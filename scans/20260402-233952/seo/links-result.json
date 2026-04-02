@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://dahsiang.com.tw/",
+  "timestamp": "2026-04-02T23:40:45Z",
+  "summary": {
+    "total_links": 32,
+    "ok": 32,
+    "broken": 0
+  },
+  "internal": {
+    "ok": 28,
+    "broken": 0
+  },
+  "external": {
+    "ok": 4,
+    "broken": 0
+  },
+  "broken_links": {
+    "internal": [],
+    "external": []
+  }
+}
