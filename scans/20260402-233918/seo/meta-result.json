@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-02T23:40:03Z",
+  "summary": {
+    "pass": 8,
+    "fail": 2,
+    "total": 10
+  },
+  "checks": [{"item": "title", "status": "pass", "value": "首頁 - Leeza家居 沙發工廠，客製化沙發、床墊｜台灣製沙發"},{"item": "description", "status": "pass", "value": "Leeza家居團隊在台灣 30 年，專注於沙發、床墊客製化的服務。沙發獨特設計，北歐風沙發，現代沙發..."},{"item": "og:title", "status": "pass", "value": "首頁 - Leeza家居 沙發工廠，客製化沙發、床墊｜台灣製沙發..."},{"item": "og:description", "status": "pass", "value": "Leeza家居團隊在台灣 30 年，專注於沙發、床墊客製化的服務。沙發獨特設計，..."},{"item": "og:image", "status": "pass", "value": "https://leeza-casa.com/wp-content/uploads/2021/12/icon1.png"},{"item": "og:url", "status": "pass", "value": "https://leeza-casa.com/"},{"item": "og:type", "status": "fail", "expected": "article", "actual": "website"},{"item": "article:published_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "article:modified_time", "status": "pass", "value": "2026-03-20T01:46:43+00:00"},{"item": "twitter:card", "status": "pass", "value": "summary_large_image"}]
+}
