@@ -64,17 +64,18 @@ if ! check_command nuclei; then
       arm64|aarch64) ARCH="arm64" ;;
     esac
 
-    NUCLEI_VERSION="3.1.0"
+    NUCLEI_VERSION="3.3.7"
     NUCLEI_URL="https://github.com/projectdiscovery/nuclei/releases/download/v${NUCLEI_VERSION}/nuclei_${NUCLEI_VERSION}_${OS}_${ARCH}.zip"
 
     if command -v curl &> /dev/null; then
-      echo "Downloading Nuclei..."
+      echo "Downloading Nuclei v${NUCLEI_VERSION}..."
       curl -sL "$NUCLEI_URL" -o /tmp/nuclei.zip && \
-        unzip -q -o /tmp/nuclei.zip -d /tmp && \
-        chmod +x /tmp/nuclei && \
-        sudo mv /tmp/nuclei /usr/local/bin/ 2>/dev/null || {
+        unzip -q -o /tmp/nuclei.zip -d /tmp/nuclei-bin && \
+        chmod +x /tmp/nuclei-bin/nuclei && \
+        sudo mv /tmp/nuclei-bin/nuclei /usr/local/bin/ 2>/dev/null || {
           echo "Warning: Failed to install Nuclei"
         }
+      rm -rf /tmp/nuclei.zip /tmp/nuclei-bin
     fi
   fi
 fi
@@ -89,8 +90,8 @@ echo ""
 echo "Tool setup completed!"
 echo ""
 echo "Installed tools:"
-check_command semgrep && echo "  - semgrep: $(semgrep --version 2>/dev/null | head -1)"
-check_command checkov && echo "  - checkov: $(checkov --version 2>/dev/null)"
-check_command pip-audit && echo "  - pip-audit: installed"
-check_command docker && echo "  - docker: $(docker --version)"
-check_command nuclei && echo "  - nuclei: $(nuclei --version 2>/dev/null)"
+check_command semgrep && echo "  - semgrep: $(semgrep --version 2>/dev/null | head -1)" || true
+check_command checkov && echo "  - checkov: $(checkov --version 2>/dev/null)" || true
+check_command pip-audit && echo "  - pip-audit: installed" || true
+check_command docker && echo "  - docker: $(docker --version)" || true
+check_command nuclei && echo "  - nuclei: $(nuclei --version 2>/dev/null)" || true
