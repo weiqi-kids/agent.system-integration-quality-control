@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-02T23:40:11Z",
+  "applicable": false,
+  "category": "none",
+  "summary": {
+    "pass": 0,
+    "fail": 0,
+    "total": 0
+  },
+  "checks": []
+}

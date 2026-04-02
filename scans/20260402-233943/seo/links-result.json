@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://ghgc.tw/",
+  "timestamp": "2026-04-02T23:40:10Z",
+  "summary": {
+    "total_links": 43,
+    "ok": 43,
+    "broken": 0
+  },
+  "internal": {
+    "ok": 39,
+    "broken": 0
+  },
+  "external": {
+    "ok": 4,
+    "broken": 0
+  },
+  "broken_links": {
+    "internal": [],
+    "external": []
+  }
+}
