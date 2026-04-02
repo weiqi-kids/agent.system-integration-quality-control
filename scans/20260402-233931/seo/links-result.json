@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://a0925172095.com/",
+  "timestamp": "2026-04-02T23:40:21Z",
+  "summary": {
+    "total_links": 92,
+    "ok": 84,
+    "broken": 8
+  },
+  "internal": {
+    "ok": 79,
+    "broken": 8
+  },
+  "external": {
+    "ok": 5,
+    "broken": 0
+  },
+  "broken_links": {
+    "internal": [{"url": "https://a0925172095.com//cdnjs.cloudflare.com", "status": "404"},{"url": "https://a0925172095.com//fonts.googleapis.com", "status": "404"},{"url": "https://a0925172095.com/comments/feed/", "status": "404"},{"url": "https://a0925172095.com/feed/", "status": "404"},{"url": "https://a0925172095.com/wp-json/", "status": "404"},{"url": "https://a0925172095.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fa0925172095.com%2F", "status": "404"},{"url": "https://a0925172095.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fa0925172095.com%2F&#038;format=xml", "status": "404"},{"url": "https://a0925172095.com/wp-json/wp/v2/pages/4676", "status": "404"}],
+    "external": []
+  }
+}
