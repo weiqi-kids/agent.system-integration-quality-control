@@ -111,22 +111,28 @@ jobs:
             const reposRaw = '${{ inputs.repos }}';
             const repos = reposRaw ? JSON.parse(reposRaw) : [];
             const reposList = repos.length > 0 ? repos.map(r => `- ${r}`).join('\n') : 'None';
+            const webUrl = '${{ inputs.web_url }}' || 'Not specified';
+            const scanDepth = '${{ inputs.scan_depth }}';
+
+            const body = [
+              '## Security Scan Failed',
+              '',
+              '**Repositories scanned:**',
+              reposList,
+              '',
+              `**Web URL:** ${webUrl}`,
+              '',
+              `**Scan Depth:** ${scanDepth}`,
+              '',
+              `**Run URL:** ${runUrl}`,
+              '',
+              'Please check the workflow logs for details.'
+            ].join('\n');
 
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: `Security scan failed - ${new Date().toISOString().split('T')[0]}`,
-              body: `## Security Scan Failed
-
-**Repositories scanned:**
-${reposList}
-
-**Web URL:** ${{ inputs.web_url || 'Not specified' }}
-
-**Scan Depth:** ${{ inputs.scan_depth }}
-
-**Run URL:** ${runUrl}
-
-Please check the workflow logs for details.`,
+              body: body,
               labels: ['security', 'scan-failed']
             });
