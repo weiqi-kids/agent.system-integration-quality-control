@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "url": "https://jjdesign.com.tw/",
+  "timestamp": "2026-04-02T23:40:02Z",
+  "summary": {
+    "pass": 9,
+    "total": 30,
+    "score": 30
+  },
+  "categories": {
+    "meta": {"pass": 7, "total": 10},
+    "schema": {"pass": 0, "total": 1},
+    "sge": {"pass": 0, "total": 5},
+    "eeat": {"pass": 0, "total": 6},
+    "cwv": {"pass": 2, "total": 8},
+    "ymyl": {"pass": 0, "total": 0, "applicable": false}
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://jjdesign.com.tw/",
+  "timestamp": "2026-04-02T23:40:00Z",
+  "summary": {
+    "total_links": 45,
+    "ok": 44,
+    "broken": 1
+  },
+  "internal": {
+    "ok": 39,
+    "broken": 1
+  },
+  "external": {
+    "ok": 5,
+    "broken": 0
+  },
+  "broken_links": {
+    "internal": [{"url": "https://www.jjdesign.com.tw/xmlrpc.php?rsd", "status": "000"}],
+    "external": []
+  }
+}
