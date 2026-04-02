@@ -1,4 +1,5 @@
 name: Security Scanner
+# System Integration Quality Control - security & SEO scanning pipeline
 
 on:
   workflow_dispatch:
