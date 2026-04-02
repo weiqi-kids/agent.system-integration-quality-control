@@ -1,0 +1,17 @@
+{
+  "project_name": "TwTxGNN",
+  "repo_url": "https://github.com/yao-care/TwTxGNN",
+  "timestamp": "2026-03-10 11:20:13",
+  "ssdlc": {
+    "pass": 4,
+    "total": 9
+  },
+  "sast": {
+    "total": 0
+  },
+  "vulnerability": {
+    "critical": 0,
+    "high": 0,
+    "total": 0
+  }
+}

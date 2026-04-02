@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "timestamp": "2026-03-10T03:21:17Z",
+  "summary": {
+    "pass": 4,
+    "fail": 3,
+    "total": 7
+  },
+  "images": {
+    "total": 00,
+    "lazy": 00,
+    "eager": 00,
+    "with_dimensions": 00
+  },
+  "checks": [{"item": "圖片載入設定", "status": "pass", "detail": "無圖片"},{"item": "圖片尺寸宣告", "status": "pass", "detail": "無圖片"},{"item": "preconnect 提示", "status": "fail", "detail": "建議新增 preconnect 給第三方資源"},{"item": "preload 提示", "status": "fail", "detail": "建議預載關鍵 CSS/字體"},{"item": "URL 小寫", "status": "pass", "detail": "全部小寫"},{"item": "URL 連字號", "status": "pass", "detail": "使用連字號"},{"item": "非阻塞腳本", "status": "fail", "detail": "建議腳本使用 async 或 defer"}]
+}

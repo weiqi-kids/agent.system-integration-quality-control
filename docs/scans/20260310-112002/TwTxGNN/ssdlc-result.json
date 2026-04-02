@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "timestamp": "2026-03-10T03:20:12Z",
+  "summary": {
+    "pass": 4,
+    "fail": 1,
+    "warn": 4,
+    "total": 9
+  },
+  "checkov": {
+    "passed": 0,
+    "failed": 0
+  },
+  "checks": [{"name": "版本控制忽略設定", "status": "PASS", "detail": "已設定 .gitignore"},{"name": "專案文件", "status": "PASS", "detail": "已有 README"},{"name": "授權聲明", "status": "WARN", "detail": "缺少 LICENSE"},{"name": "CI/CD 設定", "status": "PASS", "detail": "已設定 CI/CD"},{"name": "安全政策", "status": "WARN", "detail": "建議新增 SECURITY.md"},{"name": "依賴版本鎖定", "status": "WARN", "detail": "建議使用依賴鎖定檔"},{"name": "敏感檔案檢查", "status": "FAIL", "detail": "發現可能的敏感檔案: ./docs/fhir/ClinicalUseDefinition/famotidine-abnormality-of-glucagon-secretion.json ./docs/fhir/ClinicalUseDefinition/gemcitabine-secretory-uterine-corpus-endometrioid-adenocarcinoma.json ./docs/fhir/ClinicalUseDefinition/caspofungin-gastrin-secretion-abnormality.json "},{"name": "硬編碼密碼檢查", "status": "PASS", "detail": "未發現明顯硬編碼密碼"},{"name": "程式碼擁有者", "status": "WARN", "detail": "建議設定 CODEOWNERS"}]
+}

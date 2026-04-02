@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "timestamp": "2026-03-10T03:21:12Z",
+  "summary": {
+    "pass": 7,
+    "fail": 3,
+    "total": 10
+  },
+  "checks": [{"item": "title", "status": "pass", "value": "老藥新用驗證報告 | TwTxGNN 老藥新用驗證報告"},{"item": "description", "status": "pass", "value": "用 AI 預測台灣健保藥品的潛在新適應症，提供 191 個藥物的臨床試驗與文獻證據驗證報告。L1-L..."},{"item": "og:title", "status": "pass", "value": "老藥新用驗證報告..."},{"item": "og:description", "status": "pass", "value": "用 AI 預測台灣健保藥品的潛在新適應症，提供 191 個藥物的臨床試驗與文獻證..."},{"item": "og:image", "status": "pass", "value": "https://twtxgnn.yao.care/assets/images/og-default.png"},{"item": "og:url", "status": "pass", "value": "https://twtxgnn.yao.care/"},{"item": "og:type", "status": "fail", "expected": "article", "actual": "website"},{"item": "article:published_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "article:modified_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "twitter:card", "status": "pass", "value": "summary_large_image"}]
+}

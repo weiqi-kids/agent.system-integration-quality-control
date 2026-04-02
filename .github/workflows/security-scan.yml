@@ -1,0 +1,121 @@
+name: Security Scanner
+
+on:
+  workflow_dispatch:
+    inputs:
+      repos:
+        description: 'GitHub repo URLs (JSON array, e.g. ["https://github.com/owner/repo"])'
+        required: true
+        type: string
+      web_url:
+        description: '上線網址 (optional, for penetration testing)'
+        required: false
+        type: string
+      scan_depth:
+        description: '掃描深度'
+        required: false
+        type: choice
+        options:
+          - quick
+          - standard
+          - deep
+        default: 'standard'
+      project_name:
+        description: '專案名稱 (optional, for grouping scan history)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  issues: write
+
+jobs:
+  scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate JSON input
+        run: |
+          echo "Validating repos input..."
+          if ! echo '${{ inputs.repos }}' | jq -e . > /dev/null 2>&1; then
+            echo "Error: repos input is not valid JSON"
+            echo "Expected format: [\"https://github.com/owner/repo1\", \"https://github.com/owner/repo2\"]"
+            exit 1
+          fi
+          echo "Input validation passed"
+
+      - name: Make scripts executable
+        run: chmod +x scripts/*.sh scripts/**/*.sh
+
+      - name: Run security scans
+        env:
+          REPOS_JSON: ${{ inputs.repos }}
+          WEB_URL: ${{ inputs.web_url }}
+          SCAN_DEPTH: ${{ inputs.scan_depth }}
+          PROJECT_NAME: ${{ inputs.project_name }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: ./scripts/entrypoint.sh
+
+      - name: Upload scan artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-scan-reports
+          path: docs/scans/
+          retention-days: 30
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          keep_files: true
+
+      - name: Post scan summary
+        run: |
+          SCAN_ID=$(ls -t docs/scans/ | head -1)
+          REPO_NAME="${{ github.repository }}"
+          PAGES_URL="https://${REPO_NAME%/*}.github.io/${REPO_NAME#*/}/scans/$SCAN_ID/"
+
+          echo "## 🔒 Security Scan Completed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          PROJECT_NAME=$(jq -r '.project_name // "unknown"' docs/scans/$SCAN_ID/metadata.json 2>/dev/null || echo "unknown")
+          echo "**Project**: \`$PROJECT_NAME\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Scan ID**: \`$SCAN_ID\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📊 Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🌐 **[View Report]($PAGES_URL)**" >> $GITHUB_STEP_SUMMARY
+
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const repos = JSON.parse('${{ inputs.repos }}');
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Security scan failed - ${new Date().toISOString().split('T')[0]}`,
+              body: `## Security Scan Failed
+
+**Repositories scanned:**
+${repos.map(r => `- ${r}`).join('\n')}
+
+**Web URL:** ${{ inputs.web_url || 'Not specified' }}
+
+**Scan Depth:** ${{ inputs.scan_depth }}
+
+**Run URL:** ${runUrl}
+
+Please check the workflow logs for details.`,
+              labels: ['security', 'scan-failed']
+            });

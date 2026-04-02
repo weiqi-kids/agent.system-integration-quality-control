@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TwTxGNN - 安全掃描報告</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .status-pass { color: #10b981; }
+    .status-fail { color: #ef4444; }
+    .status-warn { color: #f59e0b; }
+    pre { background: #1e1e1e; border-radius: 8px; padding: 1rem; overflow-x: auto; font-size: 0.875rem; }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- Header -->
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">TwTxGNN</h1>
+      <p class="text-gray-400">
+        <a href="https://github.com/yao-care/TwTxGNN" class="text-blue-400 hover:underline" target="_blank">https://github.com/yao-care/TwTxGNN</a>
+      </p>
+      <p class="text-gray-500 text-sm mt-1">掃描時間: 2026-03-10 11:14:25</p>
+    </header>
+
+    <!-- Summary Cards -->
+    <div class="grid grid-cols-4 gap-4 mb-8">
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <p class="text-2xl font-bold text-green-400">4/9</p>
+        <p class="text-gray-400 text-sm">SSDLC 通過</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <p class="text-2xl font-bold text-yellow-400">0</p>
+        <p class="text-gray-400 text-sm">SAST 發現</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <p class="text-2xl font-bold text-red-400">0</p>
+        <p class="text-gray-400 text-sm">Critical 漏洞</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg text-center">
+        <p class="text-2xl font-bold text-orange-400">0</p>
+        <p class="text-gray-400 text-sm">High 漏洞</p>
+      </div>
+    </div>
+
+    <!-- SSDLC Section -->
+    <section id="ssdlc" class="mb-8">
+      <h2 class="text-xl font-bold mb-4 border-b border-gray-700 pb-2">SSDLC 安全開發生命週期檢核</h2>
+      <div class="bg-gray-800 rounded-lg overflow-hidden">
+        <table class="w-full">
+          <thead class="bg-gray-700">
+            <tr>
+              <th class="px-4 py-3 text-left">檢核項目</th>
+              <th class="px-4 py-3 text-left">狀態</th>
+              <th class="px-4 py-3 text-left">說明</th>
+            </tr>
+          </thead>
+          <tbody>
+<tr class="border-t border-gray-700"><td class="px-4 py-2">版本控制忽略設定</td><td class="px-4 py-2 status-pass">PASS</td><td class="px-4 py-2 text-gray-400">已設定 .gitignore</td></tr>
+<tr class="border-t border-gray-700"><td class="px-4 py-2">專案文件</td><td class="px-4 py-2 status-pass">PASS</td><td class="px-4 py-2 text-gray-400">已有 README</td></tr>
+<tr class="border-t border-gray-700"><td class="px-4 py-2">授權聲明</td><td class="px-4 py-2 status-warn">WARN</td><td class="px-4 py-2 text-gray-400">缺少 LICENSE</td></tr>
+<tr class="border-t border-gray-700"><td class="px-4 py-2">CI/CD 設定</td><td class="px-4 py-2 status-pass">PASS</td><td class="px-4 py-2 text-gray-400">已設定 CI/CD</td></tr>
+<tr class="border-t border-gray-700"><td class="px-4 py-2">安全政策</td><td class="px-4 py-2 status-warn">WARN</td><td class="px-4 py-2 text-gray-400">建議新增 SECURITY.md</td></tr>
+<tr class="border-t border-gray-700"><td class="px-4 py-2">依賴版本鎖定</td><td class="px-4 py-2 status-warn">WARN</td><td class="px-4 py-2 text-gray-400">建議使用依賴鎖定檔</td></tr>
+<tr class="border-t border-gray-700"><td class="px-4 py-2">敏感檔案檢查</td><td class="px-4 py-2 status-fail">FAIL</td><td class="px-4 py-2 text-gray-400">發現可能的敏感檔案: ./docs/fhir/ClinicalUseDefinition/famotidine-abnormality-of-glucagon-secretion.json ./docs/fhir/ClinicalUseDefinition/gemcitabine-secretory-uterine-corpus-endometrioid-adenocarcinoma.json ./docs/fhir/ClinicalUseDefinition/caspofungin-gastrin-secretion-abnormality.json </td></tr>
+<tr class="border-t border-gray-700"><td class="px-4 py-2">硬編碼密碼檢查</td><td class="px-4 py-2 status-pass">PASS</td><td class="px-4 py-2 text-gray-400">未發現明顯硬編碼密碼</td></tr>
+<tr class="border-t border-gray-700"><td class="px-4 py-2">程式碼擁有者</td><td class="px-4 py-2 status-warn">WARN</td><td class="px-4 py-2 text-gray-400">建議設定 CODEOWNERS</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SAST Section -->
+    <section id="sast" class="mb-8">
+      <h2 class="text-xl font-bold mb-4 border-b border-gray-700 pb-2">SAST 源碼掃描 (Semgrep)</h2>
+      <div class="bg-gray-800 p-4 rounded-lg">
+        <p class="mb-2">發現 <span class="text-yellow-400 font-bold">0</span> 個問題</p>
+        <pre><code></code></pre>
+      </div>
+    </section>
+
+    <!-- Vulnerability Section -->
+    <section id="vulnerability" class="mb-8">
+      <h2 class="text-xl font-bold mb-4 border-b border-gray-700 pb-2">弱點掃描 (Trivy)</h2>
+      <div class="bg-gray-800 p-4 rounded-lg">
+        <p class="mb-2">
+          Critical: <span class="text-red-400 font-bold">0</span> |
+          High: <span class="text-orange-400 font-bold">0</span> |
+          Total: <span class="text-yellow-400 font-bold">0</span>
+        </p>
+        <pre><code></code></pre>
+      </div>
+    </section>
+
+    <!-- Back Link -->
+    <div class="mt-8">
+      <a href="../" class="text-blue-400 hover:underline">&larr; 返回報告列表</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://twtxgnn.yao.care/",
+  "timestamp": "2026-03-10T03:15:42Z",
+  "summary": {
+    "total_links": 58,
+    "ok": 55,
+    "broken": 3
+  },
+  "internal": {
+    "ok": 46,
+    "broken": 1
+  },
+  "external": {
+    "ok": 9,
+    "broken": 2
+  },
+  "broken_links": {
+    "internal": [{"url": "https://twtxgnn.yao.care//${window.TWTXGNN_CONFIG.drugsBaseUrl}", "status": "404"}],
+    "external": [{"url": "https://ddinter2.scbdd.com/", "status": "000"},{"url": "https://go.drugbank.com/", "status": "403"}]
+  }
+}
