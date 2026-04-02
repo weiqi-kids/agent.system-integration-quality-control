@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://sworkz.com/",
+  "timestamp": "2026-04-02T23:40:33Z",
+  "summary": {
+    "total_links": 93,
+    "ok": 91,
+    "broken": 2
+  },
+  "internal": {
+    "ok": 90,
+    "broken": 2
+  },
+  "external": {
+    "ok": 1,
+    "broken": 0
+  },
+  "broken_links": {
+    "internal": [{"url": "https://sworkz.com/?page_id=7973", "status": "404"},{"url": "https://sworkz.com/xmlrpc.php", "status": "405"}],
+    "external": []
+  }
+}
