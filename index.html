@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Integration Quality Control - 檢測流程</title>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0f172a; color: #e2e8f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; min-height: 100vh; }
+    header { text-align: center; padding: 3rem 1rem 1rem; }
+    header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    header p { color: #94a3b8; font-size: 1rem; }
+    #flow { width: 100%; overflow-x: auto; }
+    svg { display: block; margin: 0 auto; }
+    .node rect { rx: 12; ry: 12; stroke-width: 2; cursor: default; }
+    .node text { fill: #e2e8f0; font-size: 13px; font-weight: 600; pointer-events: none; }
+    .node .subtitle { fill: #94a3b8; font-size: 10px; font-weight: 400; }
+    .link { fill: none; stroke-width: 2; }
+    .link-arrow { fill: #475569; }
+    .phase-label { fill: #64748b; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    .legend { margin: 2rem auto; max-width: 900px; padding: 0 1rem; }
+    .legend h3 { font-size: 1rem; margin-bottom: 1rem; color: #94a3b8; }
+    .legend-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .legend-item { background: #1e293b; border-radius: 8px; padding: 1rem; border-left: 4px solid; }
+    .legend-item h4 { font-size: 0.875rem; margin-bottom: 0.25rem; }
+    .legend-item p { font-size: 0.75rem; color: #94a3b8; line-height: 1.5; }
+    footer { text-align: center; padding: 2rem; color: #475569; font-size: 0.75rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>System Integration Quality Control</h1>
+    <p>系統整合品質管制 — 自動化安全掃描與 SEO 檢測流程</p>
+  </header>
+
+  <div id="flow"></div>
+
+  <div class="legend">
+    <h3>檢測項目說明</h3>
+    <div class="legend-grid">
+      <div class="legend-item" style="border-color: #f59e0b;">
+        <h4>SSDLC 安全開發生命週期</h4>
+        <p>檢查專案是否具備安全開發基礎：CI/CD 設定、依賴管理、密鑰掃描、分支保護等。</p>
+      </div>
+      <div class="legend-item" style="border-color: #ef4444;">
+        <h4>SAST 靜態源碼掃描</h4>
+        <p>使用 Semgrep 對原始碼進行靜態分析，偵測注入攻擊、XSS、不安全的加密等安全漏洞。</p>
+      </div>
+      <div class="legend-item" style="border-color: #8b5cf6;">
+        <h4>弱點掃描</h4>
+        <p>使用 Trivy 掃描依賴套件的已知漏洞 (CVE)，依嚴重度分級：Critical / High / Medium。</p>
+      </div>
+      <div class="legend-item" style="border-color: #ec4899;">
+        <h4>滲透測試</h4>
+        <p>使用 OWASP ZAP 與 Nuclei 對上線網站進行動態安全測試，模擬攻擊者行為。</p>
+      </div>
+      <div class="legend-item" style="border-color: #06b6d4;">
+        <h4>連結檢查</h4>
+        <p>掃描網站所有內部與外部連結，偵測 404 斷連、重導向異常等問題。</p>
+      </div>
+      <div class="legend-item" style="border-color: #10b981;">
+        <h4>SEO / AEO 檢測</h4>
+        <p>Meta 標籤、Schema 結構化資料、SGE/AEO 標記、E-E-A-T 信號、Core Web Vitals、YMYL 合規。</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>Powered by System Integration Quality Control</footer>
+
+  <script>
+    const nodes = [
+      // Phase 1: Input
+      { id: 'input', label: '輸入參數', subtitle: 'Repo URL / Web URL', x: 80, y: 200, w: 130, h: 56, color: '#334155', stroke: '#475569', phase: 1 },
+      // Phase 2: Setup
+      { id: 'setup', label: '環境準備', subtitle: 'Semgrep / Trivy / Nuclei', x: 270, y: 200, w: 150, h: 56, color: '#334155', stroke: '#475569', phase: 2 },
+      // Phase 3: Clone
+      { id: 'clone', label: 'Clone 原始碼', subtitle: 'git clone --depth 1', x: 480, y: 120, w: 140, h: 56, color: '#1e3a5f', stroke: '#3b82f6', phase: 3 },
+      // Phase 3: Fetch
+      { id: 'fetch', label: '取得網頁', subtitle: 'curl', x: 480, y: 280, w: 140, h: 56, color: '#1e3a5f', stroke: '#3b82f6', phase: 3 },
+      // Phase 4: Security scans
+      { id: 'ssdlc', label: 'SSDLC', subtitle: 'Checkov', x: 680, y: 40, w: 120, h: 50, color: '#422006', stroke: '#f59e0b', phase: 4 },
+      { id: 'sast', label: 'SAST', subtitle: 'Semgrep', x: 680, y: 110, w: 120, h: 50, color: '#450a0a', stroke: '#ef4444', phase: 4 },
+      { id: 'vuln', label: '弱點掃描', subtitle: 'Trivy', x: 680, y: 180, w: 120, h: 50, color: '#2e1065', stroke: '#8b5cf6', phase: 4 },
+      // Phase 4: Web scans
+      { id: 'pentest', label: '滲透測試', subtitle: 'ZAP + Nuclei', x: 680, y: 260, w: 120, h: 50, color: '#500724', stroke: '#ec4899', phase: 4 },
+      { id: 'links', label: '連結檢查', subtitle: '404 偵測', x: 680, y: 330, w: 120, h: 50, color: '#083344', stroke: '#06b6d4', phase: 4 },
+      { id: 'seo', label: 'SEO / AEO', subtitle: 'Meta+Schema+SGE...', x: 680, y: 400, w: 120, h: 50, color: '#052e16', stroke: '#10b981', phase: 4 },
+      // Phase 5: Report
+      { id: 'report', label: '產生報告', subtitle: 'HTML + GitHub Pages', x: 870, y: 200, w: 140, h: 56, color: '#1e293b', stroke: '#6366f1', phase: 5 },
+    ];
+
+    const links = [
+      { source: 'input', target: 'setup' },
+      { source: 'setup', target: 'clone' },
+      { source: 'setup', target: 'fetch' },
+      { source: 'clone', target: 'ssdlc' },
+      { source: 'clone', target: 'sast' },
+      { source: 'clone', target: 'vuln' },
+      { source: 'fetch', target: 'pentest' },
+      { source: 'fetch', target: 'links' },
+      { source: 'fetch', target: 'seo' },
+      { source: 'ssdlc', target: 'report' },
+      { source: 'sast', target: 'report' },
+      { source: 'vuln', target: 'report' },
+      { source: 'pentest', target: 'report' },
+      { source: 'links', target: 'report' },
+      { source: 'seo', target: 'report' },
+    ];
+
+    const phases = [
+      { x: 80, label: '輸入' },
+      { x: 270, label: '安裝' },
+      { x: 480, label: '取得資料' },
+      { x: 680, label: '掃描檢測' },
+      { x: 870, label: '報告' },
+    ];
+
+    const svgW = 1080, svgH = 490;
+    const svg = d3.select('#flow').append('svg')
+      .attr('viewBox', `0 0 ${svgW} ${svgH}`)
+      .attr('width', '100%')
+      .attr('style', 'max-width: 1080px');
+
+    // Arrow marker
+    svg.append('defs').append('marker')
+      .attr('id', 'arrow').attr('viewBox', '0 0 10 10')
+      .attr('refX', 10).attr('refY', 5)
+      .attr('markerWidth', 8).attr('markerHeight', 8)
+      .attr('orient', 'auto-start-reverse')
+      .append('path').attr('d', 'M 0 0 L 10 5 L 0 10 z')
+      .attr('class', 'link-arrow');
+
+    // Phase labels
+    phases.forEach(p => {
+      svg.append('text')
+        .attr('class', 'phase-label')
+        .attr('x', p.x + 60).attr('y', 470)
+        .attr('text-anchor', 'middle')
+        .text(p.label);
+    });
+
+    // Build lookup
+    const nodeMap = {};
+    nodes.forEach(n => { nodeMap[n.id] = n; });
+
+    // Draw links
+    links.forEach(l => {
+      const s = nodeMap[l.source], t = nodeMap[l.target];
+      const sx = s.x + s.w, sy = s.y + s.h / 2;
+      const tx = t.x, ty = t.y + t.h / 2;
+      const mx = (sx + tx) / 2;
+
+      svg.append('path')
+        .attr('class', 'link')
+        .attr('stroke', '#475569')
+        .attr('d', `M${sx},${sy} C${mx},${sy} ${mx},${ty} ${tx},${ty}`)
+        .attr('marker-end', 'url(#arrow)');
+    });
+
+    // Draw nodes
+    const nodeG = svg.selectAll('.node')
+      .data(nodes).enter().append('g')
+      .attr('class', 'node')
+      .attr('transform', d => `translate(${d.x},${d.y})`);
+
+    nodeG.append('rect')
+      .attr('width', d => d.w).attr('height', d => d.h)
+      .attr('fill', d => d.color).attr('stroke', d => d.stroke);
+
+    nodeG.append('text')
+      .attr('x', d => d.w / 2).attr('y', d => d.h / 2 - 4)
+      .attr('text-anchor', 'middle')
+      .text(d => d.label);
+
+    nodeG.append('text')
+      .attr('class', 'subtitle')
+      .attr('x', d => d.w / 2).attr('y', d => d.h / 2 + 12)
+      .attr('text-anchor', 'middle')
+      .text(d => d.subtitle);
+
+    // Animate links on load
+    svg.selectAll('.link').each(function() {
+      const len = this.getTotalLength();
+      d3.select(this)
+        .attr('stroke-dasharray', len)
+        .attr('stroke-dashoffset', len)
+        .transition().duration(1200).ease(d3.easeCubicOut)
+        .attr('stroke-dashoffset', 0);
+    });
+
+    // Fade in nodes
+    nodeG.style('opacity', 0)
+      .transition().delay((d, i) => i * 80).duration(500)
+      .style('opacity', 1);
+  </script>
+</body>
+</html>

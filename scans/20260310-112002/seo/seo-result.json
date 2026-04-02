@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "url": "https://twtxgnn.yao.care/",
+  "timestamp": "2026-03-10T03:21:18Z",
+  "summary": {
+    "pass": 15,
+    "total": 34,
+    "score": 44
+  },
+  "categories": {
+    "meta": {"pass": 7, "total": 10},
+    "schema": {"pass": 0, "total": 1},
+    "sge": {"pass": 3, "total": 6},
+    "eeat": {"pass": 1, "total": 6},
+    "cwv": {"pass": 4, "total": 7},
+    "ymyl": {"pass": 0, "total": 4, "applicable": true}
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "timestamp": "2026-03-10T03:15:52Z",
+  "summary": {
+    "pass": 1,
+    "fail": 5,
+    "total": 6
+  },
+  "authority_links": {
+    "gov": 3,
+    "edu": 1,
+    "academic": 2,
+    "total": 6
+  },
+  "checks": [{"item": "Person Schema", "status": "fail", "detail": "未找到 Person Schema"},{"item": "專業認證 (hasCredential)", "status": "fail", "detail": "缺少專業認證資訊"},{"item": "社群連結 (sameAs)", "status": "fail", "detail": "需要至少 1 個社群連結"},{"item": "權威來源連結", "status": "pass", "detail": "6 個 (.gov: 3, .edu: 1, 學術: 2)"},{"item": "作者介紹區塊", "status": "fail", "detail": "建議新增作者介紹區塊"},{"item": "更新日期標示", "status": "fail", "detail": "建議顯示最後更新日期"}]
+}

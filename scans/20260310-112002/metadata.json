@@ -1,0 +1,9 @@
+{
+  "scan_id": "20260310-112002",
+  "timestamp": "2026-03-10T03:20:02Z",
+  "project_name": "twtxgnn.yao.care",
+  "web_url": "https://twtxgnn.yao.care/",
+  "scan_depth": "standard",
+  "repos": ["https://github.com/yao-care/TwTxGNN"],
+  "projects": []
+}

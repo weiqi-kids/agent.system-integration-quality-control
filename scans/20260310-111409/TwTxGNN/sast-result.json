@@ -1,0 +1,6 @@
+{
+  "status": "skipped",
+  "reason": "semgrep not installed",
+  "results": [],
+  "errors": []
+}

@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "timestamp": "2026-03-10T03:15:49Z",
+  "summary": {
+    "pass": 0,
+    "fail": 10,
+    "total": 10
+  },
+  "checks": [{"item": "title", "status": "fail", "expected": "存在且≤60字", "actual": ""},{"item": "description", "status": "fail", "expected": "存在且≤155字", "actual": "..."},{"item": "og:title", "status": "fail", "expected": "必須存在", "actual": ""},{"item": "og:description", "status": "fail", "expected": "必須存在", "actual": ""},{"item": "og:image", "status": "fail", "expected": "必須存在", "actual": ""},{"item": "og:url", "status": "fail", "expected": "必須存在", "actual": ""},{"item": "og:type", "status": "fail", "expected": "article", "actual": ""},{"item": "article:published_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "article:modified_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "twitter:card", "status": "fail", "expected": "summary_large_image", "actual": ""}]
+}

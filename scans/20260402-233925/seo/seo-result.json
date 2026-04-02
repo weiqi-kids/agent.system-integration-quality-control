@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "url": "https://credit1993.tw/",
+  "timestamp": "2026-04-02T23:39:44Z",
+  "summary": {
+    "pass": 4,
+    "total": 30,
+    "score": 13
+  },
+  "categories": {
+    "meta": {"pass": 0, "total": 10},
+    "schema": {"pass": 0, "total": 1},
+    "sge": {"pass": 0, "total": 5},
+    "eeat": {"pass": 0, "total": 6},
+    "cwv": {"pass": 4, "total": 8},
+    "ymyl": {"pass": 0, "total": 0, "applicable": false}
+  }
+}

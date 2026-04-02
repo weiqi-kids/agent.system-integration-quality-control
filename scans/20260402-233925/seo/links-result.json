@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://credit1993.tw/",
+  "timestamp": "2026-04-02T23:39:43Z",
+  "summary": {
+    "total_links": 62,
+    "ok": 60,
+    "broken": 2
+  },
+  "internal": {
+    "ok": 57,
+    "broken": 2
+  },
+  "external": {
+    "ok": 3,
+    "broken": 0
+  },
+  "broken_links": {
+    "internal": [{"url": "https://credit1993.tw/cdn-cgi/l/email-protection", "status": "404"},{"url": "https://www.credit1993.tw/xmlrpc.php", "status": "405"}],
+    "external": []
+  }
+}
