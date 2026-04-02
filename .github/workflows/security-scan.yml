@@ -6,10 +6,10 @@ on:
     inputs:
       repos:
         description: 'GitHub repo URLs (JSON array, e.g. ["https://github.com/owner/repo"])'
-        required: true
+        required: false
         type: string
       web_url:
-        description: '上線網址 (optional, for penetration testing)'
+        description: '上線網址 (for penetration testing & SEO scans)'
         required: false
         type: string
       scan_depth:
@@ -42,13 +42,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Validate JSON input
+      - name: Validate inputs
         run: |
-          echo "Validating repos input..."
-          if ! echo '${{ inputs.repos }}' | jq -e . > /dev/null 2>&1; then
-            echo "Error: repos input is not valid JSON"
-            echo "Expected format: [\"https://github.com/owner/repo1\", \"https://github.com/owner/repo2\"]"
+          REPOS='${{ inputs.repos }}'
+          WEB_URL='${{ inputs.web_url }}'
+          if [ -z "$REPOS" ] && [ -z "$WEB_URL" ]; then
+            echo "Error: At least one of repos or web_url is required"
             exit 1
+          fi
+          if [ -n "$REPOS" ]; then
+            echo "Validating repos JSON..."
+            if ! echo "$REPOS" | jq -e . > /dev/null 2>&1; then
+              echo "Error: repos input is not valid JSON"
+              echo "Expected format: [\"https://github.com/owner/repo1\"]"
+              exit 1
+            fi
           fi
           echo "Input validation passed"
 
@@ -100,7 +108,9 @@ jobs:
         with:
           script: |
             const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
-            const repos = JSON.parse('${{ inputs.repos }}');
+            const reposRaw = '${{ inputs.repos }}';
+            const repos = reposRaw ? JSON.parse(reposRaw) : [];
+            const reposList = repos.length > 0 ? repos.map(r => `- ${r}`).join('\n') : 'None';
 
             await github.rest.issues.create({
               owner: context.repo.owner,
@@ -109,7 +119,7 @@ jobs:
               body: `## Security Scan Failed
 
 **Repositories scanned:**
-${repos.map(r => `- ${r}`).join('\n')}
+${reposList}
 
 **Web URL:** ${{ inputs.web_url || 'Not specified' }}
 
