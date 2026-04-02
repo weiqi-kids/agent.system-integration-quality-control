@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://cornerstonevc.tw/",
+  "timestamp": "2026-04-02T23:40:08Z",
+  "summary": {
+    "total_links": 46,
+    "ok": 42,
+    "broken": 4
+  },
+  "internal": {
+    "ok": 34,
+    "broken": 1
+  },
+  "external": {
+    "ok": 8,
+    "broken": 3
+  },
+  "broken_links": {
+    "internal": [{"url": "https://cornerstonevc.tw/xmlrpc.php?rsd", "status": "000"}],
+    "external": [{"url": "http://073383010", "status": "000"},{"url": "https://pixabay.com/zh/photos/street-graffitti-urban-modern-wall-1944600/", "status": "403"},{"url": "https://www.linkedin.com/company/cornerstone-ventures-%E5%9F%BA%E7%9F%B3%E5%89%B5%E6%8A%95/", "status": "999"}]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-02T23:40:10Z",
+  "summary": {
+    "pass": 4,
+    "fail": 4,
+    "total": 8
+  },
+  "images": {
+    "total": 6,
+    "lazy": 00,
+    "eager": 00,
+    "with_dimensions": 6
+  },
+  "checks": [{"item": "首屏圖片 loading", "status": "fail", "detail": "首屏圖片應使用 loading=\"eager\""},{"item": "延遲載入圖片", "status": "fail", "detail": "非首屏圖片應使用 loading=\"lazy\""},{"item": "圖片尺寸宣告", "status": "pass", "detail": "所有圖片都有 width/height"},{"item": "preconnect 提示", "status": "fail", "detail": "建議新增 preconnect 給第三方資源"},{"item": "preload 提示", "status": "fail", "detail": "建議預載關鍵 CSS/字體"},{"item": "URL 小寫", "status": "pass", "detail": "全部小寫"},{"item": "URL 連字號", "status": "pass", "detail": "使用連字號"},{"item": "非阻塞腳本", "status": "pass", "detail": "1 個腳本使用 async/defer"}]
+}
