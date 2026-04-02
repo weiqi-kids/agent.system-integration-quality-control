@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://yesmanphoto.com.tw/",
+  "timestamp": "2026-04-02T23:42:30Z",
+  "summary": {
+    "total_links": 243,
+    "ok": 243,
+    "broken": 0
+  },
+  "internal": {
+    "ok": 238,
+    "broken": 0
+  },
+  "external": {
+    "ok": 5,
+    "broken": 0
+  },
+  "broken_links": {
+    "internal": [],
+    "external": []
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-02T23:42:33Z",
+  "summary": {
+    "pass": 9,
+    "fail": 1,
+    "total": 10
+  },
+  "checks": [{"item": "title", "status": "pass", "value": "Yes man專業攝影工作室 －新北 新生兒拍攝｜親子攝影｜寶寶寫真推薦｜孕期攝影｜寶寶攝影安撫"},{"item": "description", "status": "pass", "value": "新生兒攝影，再不拍就長大了 YESMAN 新生兒攝影・兒童攝影・全家福 最新作品 WORKS 更多作..."},{"item": "og:title", "status": "pass", "value": "Yes man專業攝影工作室 －新北 新生兒拍攝｜親子攝影｜寶寶寫真推薦｜孕期攝..."},{"item": "og:description", "status": "pass", "value": "新生兒攝影，再不拍就長大了 YESMAN 新生兒攝影・兒童攝影・全家福 最新作品..."},{"item": "og:image", "status": "pass", "value": "https://yesmanphoto.com.tw/wp-content/uploads/2024/06/IMG_6660-1-scaled.jpg"},{"item": "og:url", "status": "pass", "value": "https://yesmanphoto.com.tw/"},{"item": "og:type", "status": "fail", "expected": "article", "actual": "website"},{"item": "article:published_time", "status": "pass", "value": "2024-03-22T03:51:26+08:00"},{"item": "article:modified_time", "status": "pass", "value": "2024-08-04T22:40:20+08:00"},{"item": "twitter:card", "status": "pass", "value": "summary_large_image"}]
+}
