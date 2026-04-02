@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-02T23:40:53Z",
+  "summary": {
+    "pass": 8,
+    "fail": 2,
+    "total": 10
+  },
+  "checks": [{"item": "title", "status": "pass", "value": "大愛桃園搬家公司合法立案.PTT網友推薦.免費估價.理賠保證.搬遷合約保障"},{"item": "description", "status": "pass", "value": "搬家公司 認明政府合法立案PTT網友推薦優質大愛桃園搬家公司，主要營業桃園、新北市、台北市、基隆搬家..."},{"item": "og:title", "status": "pass", "value": "大愛桃園搬家公司合法立案.PTT網友推薦.免費估價.理賠保證.搬遷合約保障..."},{"item": "og:description", "status": "pass", "value": "搬家公司 認明政府合法立案PTT網友推薦優質大愛桃園搬家公司，主要營業桃園、新北..."},{"item": "og:image", "status": "pass", "value": "https://move666.com.tw/wp-content/uploads/2020/10/favicon-dlm.com_.tw_.jpg"},{"item": "og:url", "status": "pass", "value": "https://move666.com.tw/"},{"item": "og:type", "status": "fail", "expected": "article", "actual": "website"},{"item": "article:published_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "article:modified_time", "status": "pass", "value": "2021-06-25T05:43:44+00:00"},{"item": "twitter:card", "status": "pass", "value": "summary_large_image"}]
+}
