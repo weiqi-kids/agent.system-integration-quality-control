@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-03T01:06:07Z",
+  "applicable": true,
+  "category": "finance",
+  "summary": {
+    "pass": 0,
+    "fail": 4,
+    "total": 4
+  },
+  "checks": [{"item": "lastReviewed", "status": "fail", "detail": "YMYL 內容需要標示最後審核日期"},{"item": "reviewedBy", "status": "fail", "detail": "YMYL 內容需要標示審核者"},{"item": "免責聲明", "status": "fail", "detail": "財務內容需要免責聲明"},{"item": "專業認證", "status": "fail", "detail": "YMYL 內容作者應有專業認證"}]
+}

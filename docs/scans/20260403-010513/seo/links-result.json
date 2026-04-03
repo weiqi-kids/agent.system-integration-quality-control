@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://leeza-casa.com/",
+  "timestamp": "2026-04-03T01:06:07Z",
+  "summary": {
+    "total_links": 101,
+    "ok": 97,
+    "broken": 4
+  },
+  "internal": {
+    "ok": 89,
+    "broken": 3
+  },
+  "external": {
+    "ok": 8,
+    "broken": 1
+  },
+  "broken_links": {
+    "internal": [{"url": "https://leeza-casa.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fleeza-casa.com%2F", "status": "403"},{"url": "https://leeza-casa.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fleeza-casa.com%2F&#038;format=xml", "status": "403"},{"url": "https://leeza-casa.com/xmlrpc.php?rsd", "status": "403"}],
+    "external": [{"url": "https://pingsounds.com/", "status": "403"}]
+  }
+}
