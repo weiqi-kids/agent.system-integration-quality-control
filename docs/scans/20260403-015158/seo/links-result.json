@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://leeza-casa.com/",
+  "timestamp": "2026-04-03T01:52:42Z",
+  "summary": {
+    "total_links": 101,
+    "ok": 93,
+    "broken": 8
+  },
+  "internal": {
+    "ok": 85,
+    "broken": 7
+  },
+  "external": {
+    "ok": 8,
+    "broken": 1
+  },
+  "broken_links": {
+    "internal": [{"url": "https://leeza-casa.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.35.7", "status": "403"},{"url": "https://leeza-casa.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=5.15.3", "status": "403"},{"url": "https://leeza-casa.com/wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=1.6.37", "status": "403"},{"url": "https://leeza-casa.com/wp-content/uploads/elementor/css/post-629.css?ver=1774052713", "status": "403"},{"url": "https://leeza-casa.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fleeza-casa.com%2F", "status": "403"},{"url": "https://leeza-casa.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fleeza-casa.com%2F&#038;format=xml", "status": "403"},{"url": "https://leeza-casa.com/xmlrpc.php?rsd", "status": "403"}],
+    "external": [{"url": "https://pingsounds.com/", "status": "403"}]
+  }
+}
