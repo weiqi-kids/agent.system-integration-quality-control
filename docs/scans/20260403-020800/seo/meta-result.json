@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-03T02:08:34Z",
+  "summary": {
+    "pass": 4,
+    "fail": 6,
+    "total": 10
+  },
+  "checks": [{"item": "title", "status": "pass", "value": "唐盛資源整合顧問有限公司"},{"item": "description", "status": "pass", "value": "唐盛顧問的主要營業項目為經營管理輔導、管理系統驗證輔導、勞工法令諮詢、志願服務管理、文化資產管理、運..."},{"item": "og:title", "status": "pass", "value": "唐盛資源整合顧問有限公司..."},{"item": "og:description", "status": "fail", "expected": "必須存在", "actual": ""},{"item": "og:image", "status": "fail", "expected": "必須存在", "actual": ""},{"item": "og:url", "status": "pass", "value": "https://tsric.com.tw/"},{"item": "og:type", "status": "fail", "expected": "article", "actual": "website"},{"item": "article:published_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "article:modified_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "twitter:card", "status": "fail", "expected": "summary_large_image", "actual": ""}]
+}

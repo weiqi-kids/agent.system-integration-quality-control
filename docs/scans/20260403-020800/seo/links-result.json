@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://tsric.com.tw/",
+  "timestamp": "2026-04-03T02:08:34Z",
+  "summary": {
+    "total_links": 66,
+    "ok": 66,
+    "broken": 0
+  },
+  "internal": {
+    "ok": 59,
+    "broken": 0
+  },
+  "external": {
+    "ok": 7,
+    "broken": 0
+  },
+  "broken_links": {
+    "internal": [],
+    "external": []
+  }
+}

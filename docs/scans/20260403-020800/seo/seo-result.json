@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "url": "https://tsric.com.tw/",
+  "timestamp": "2026-04-03T02:08:35Z",
+  "summary": {
+    "pass": 7,
+    "total": 34,
+    "score": 20
+  },
+  "categories": {
+    "meta": {"pass": 4, "total": 10},
+    "schema": {"pass": 0, "total": 1},
+    "sge": {"pass": 0, "total": 5},
+    "eeat": {"pass": 1, "total": 6},
+    "cwv": {"pass": 2, "total": 8},
+    "ymyl": {"pass": 0, "total": 4, "applicable": true}
+  }
+}
