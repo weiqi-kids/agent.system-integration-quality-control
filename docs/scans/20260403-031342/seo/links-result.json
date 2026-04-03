@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://move666.com.tw/",
+  "timestamp": "2026-04-03T03:14:47Z",
+  "summary": {
+    "total_links": 78,
+    "ok": 78,
+    "broken": 0
+  },
+  "internal": {
+    "ok": 71,
+    "broken": 0
+  },
+  "external": {
+    "ok": 7,
+    "broken": 0
+  },
+  "broken_links": {
+    "internal": [],
+    "external": []
+  }
+}
