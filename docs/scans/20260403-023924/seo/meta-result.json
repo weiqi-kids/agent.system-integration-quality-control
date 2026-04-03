@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-03T02:40:05Z",
+  "summary": {
+    "pass": 7,
+    "fail": 3,
+    "total": 10
+  },
+  "checks": [{"item": "title", "status": "pass", "value": "捷筑室內設計 - 捷筑室內設計 JJDESIGN"},{"item": "description", "status": "fail", "expected": "存在且≤155字", "actual": "..."},{"item": "og:title", "status": "pass", "value": "捷筑室內設計 - 捷筑室內設計 JJDESIGN..."},{"item": "og:description", "status": "pass", "value": "JJDESIGN JJHOME 捷筑 陪您一起打造有記憶有溫度的家 來圓夢吧 S..."},{"item": "og:image", "status": "pass", "value": "https://www.jjdesign.com.tw/wp-content/uploads/2021/07/portfolio_12_8.jpg"},{"item": "og:url", "status": "pass", "value": "https://www.jjdesign.com.tw/"},{"item": "og:type", "status": "fail", "expected": "article", "actual": "website"},{"item": "article:published_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "article:modified_time", "status": "pass", "value": "2021-09-08T09:17:38+00:00"},{"item": "twitter:card", "status": "pass", "value": "summary_large_image"}]
+}
