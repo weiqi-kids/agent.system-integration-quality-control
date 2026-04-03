@@ -63,7 +63,7 @@ echo "Generating scan index page..."
 PROJECT_ROWS=""
 
 for project_dir in "$SCAN_DIR"/*/; do
-  if [ -d "$project_dir" ] && [ "$(basename "$project_dir")" != "pentest" ]; then
+  if [ -d "$project_dir" ] && [ "$(basename "$project_dir")" != "pentest" ] && [ "$(basename "$project_dir")" != "seo" ]; then
     project_name=$(basename "$project_dir")
     summary_file="$project_dir/summary.json"
 
@@ -98,6 +98,24 @@ for project_dir in "$SCAN_DIR"/*/; do
     fi
   fi
 done
+
+# Web-only scan: add a row when no repo projects exist
+if [ -z "$PROJECT_ROWS" ] && [ -n "$WEB_URL" ]; then
+  PROJECT_ROWS="
+      <tr class=\"border-t border-gray-700 hover:bg-gray-750\">
+        <td class=\"px-3 py-3 font-medium\">$CUR_PROJECT_NAME</td>
+        <td class=\"px-3 py-3\"><a href=\"$WEB_URL\" class=\"text-blue-400 hover:underline\" target=\"_blank\">$WEB_URL</a></td>
+        <td class=\"px-3 py-3 font-mono text-sm\">$TIMESTAMP</td>
+        <td class=\"px-3 py-3 text-gray-500\">-</td>
+        <td class=\"px-3 py-3 text-gray-500\">-</td>
+        <td class=\"px-3 py-3 text-gray-500\">-</td>
+        <td class=\"px-3 py-3\"><a href=\"pentest/\" class=\"hover:underline text-purple-400\">$PENTEST_TOTAL</a></td>
+        <td class=\"px-3 py-3\"><a href=\"seo/\" class=\"hover:underline text-green-400\">$LINKS_OK/$((LINKS_OK + LINKS_BROKEN))</a></td>
+        <td class=\"px-3 py-3\"><a href=\"seo/#meta\" class=\"hover:underline text-cyan-400\">$META_PASS/$META_TOTAL</a></td>
+        <td class=\"px-3 py-3\"><a href=\"seo/#schema\" class=\"hover:underline text-pink-400\">$SCHEMA_PASS/$SCHEMA_TOTAL</a></td>
+        <td class=\"px-3 py-3\"><a href=\"seo/#sge\" class=\"hover:underline text-indigo-400\">$SGE_PASS/$SGE_TOTAL</a></td>
+      </tr>"
+fi
 
 # Generate scan index HTML
 cat > "$SCAN_DIR/index.html" << EOF
