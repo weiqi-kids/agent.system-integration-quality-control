@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-03T03:08:37Z",
+  "summary": {
+    "pass": 8,
+    "fail": 2,
+    "total": 10
+  },
+  "checks": [{"item": "title", "status": "pass", "value": "光華玻璃有限公司｜專業玻璃工程｜質感生活從窗開始"},{"item": "description", "status": "pass", "value": "光華玻璃行隨著市場需求的多元化，本公司逐年拓展服務範圍，包含採光罩規劃施工、淋浴拉門設計安裝、唯幕玻..."},{"item": "og:title", "status": "pass", "value": "光華玻璃有限公司｜專業玻璃工程｜質感生活從窗開始..."},{"item": "og:description", "status": "pass", "value": "光華玻璃行隨著市場需求的多元化，本公司逐年拓展服務範圍，包含採光罩規劃施工、淋浴..."},{"item": "og:image", "status": "fail", "expected": "必須存在", "actual": ""},{"item": "og:url", "status": "pass", "value": "https://ghgc.tw/"},{"item": "og:type", "status": "fail", "expected": "article", "actual": "website"},{"item": "article:published_time", "status": "pass", "value": "2025-05-03T00:02:41+08:00"},{"item": "article:modified_time", "status": "pass", "value": "2025-09-08T10:24:20+08:00"},{"item": "twitter:card", "status": "pass", "value": "summary_large_image"}]
+}

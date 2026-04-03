@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "url": "https://ghgc.tw/",
+  "timestamp": "2026-04-03T03:08:37Z",
+  "summary": {
+    "pass": 13,
+    "total": 30,
+    "score": 43
+  },
+  "categories": {
+    "meta": {"pass": 8, "total": 10},
+    "schema": {"pass": 0, "total": 1},
+    "sge": {"pass": 0, "total": 5},
+    "eeat": {"pass": 0, "total": 6},
+    "cwv": {"pass": 5, "total": 8},
+    "ymyl": {"pass": 0, "total": 0, "applicable": false}
+  }
+}
