@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://muyuntw.com/",
+  "timestamp": "2026-04-03T02:45:17Z",
+  "summary": {
+    "total_links": 35,
+    "ok": 32,
+    "broken": 3
+  },
+  "internal": {
+    "ok": 21,
+    "broken": 3
+  },
+  "external": {
+    "ok": 11,
+    "broken": 0
+  },
+  "broken_links": {
+    "internal": [{"url": "https://public-api.wordpress.com/oembed/?format=json&amp;url=https%3A%2F%2Fmuyuntw.com%2F&amp;for=wpcom-auto-discovery", "status": "501"},{"url": "https://public-api.wordpress.com/oembed/?format=xml&amp;url=https%3A%2F%2Fmuyuntw.com%2F&amp;for=wpcom-auto-discovery", "status": "501"},{"url": "https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fmuyuntw.com%252F", "status": "403"}],
+    "external": []
+  }
+}

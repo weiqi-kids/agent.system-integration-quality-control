@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-03T02:45:17Z",
+  "summary": {
+    "pass": 0,
+    "fail": 1,
+    "total": 1
+  },
+  "checks": [{"item": "JSON-LD", "status": "fail", "detail": "未找到 JSON-LD 結構化資料"}]
+}

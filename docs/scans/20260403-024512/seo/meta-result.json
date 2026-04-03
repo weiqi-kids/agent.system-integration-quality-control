@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-03T02:45:17Z",
+  "summary": {
+    "pass": 7,
+    "fail": 3,
+    "total": 10
+  },
+  "checks": [{"item": "title", "status": "pass", "value": "MUYUN &#8211; MUYUN LIMITED COMPANY"},{"item": "description", "status": "pass", "value": "MUYUN Limited Company..."},{"item": "og:title", "status": "pass", "value": "MUYUN..."},{"item": "og:description", "status": "pass", "value": "MUYUN LIMITED COMPANY..."},{"item": "og:image", "status": "pass", "value": "https://muyuntw.com/wp-content/uploads/2025/01/application-category_communication.png"},{"item": "og:url", "status": "pass", "value": "https://muyuntw.com/"},{"item": "og:type", "status": "fail", "expected": "article", "actual": "website"},{"item": "article:published_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "article:modified_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "twitter:card", "status": "pass", "value": "summary_large_image"}]
+}
