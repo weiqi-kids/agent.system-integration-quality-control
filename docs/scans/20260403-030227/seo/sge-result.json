@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-03T03:02:46Z",
+  "summary": {
+    "pass": 0,
+    "fail": 5,
+    "total": 5
+  },
+  "h2_count": 1,
+  "checks": [{"item": ".key-answer", "status": "fail", "detail": "需要每個 H2 都有 .key-answer (00/1)"},{"item": ".key-answer[data-question]", "status": "fail", "detail": "需要 data-question 屬性 (00/00)"},{"item": ".key-takeaway", "status": "fail", "detail": "需要 2-3 個 .key-takeaway (00)"},{"item": ".expert-quote", "status": "fail", "detail": "需要至少 1 個 .expert-quote"},{"item": ".actionable-steps", "status": "fail", "detail": "需要 .actionable-steps 行動步驟"}]
+}
