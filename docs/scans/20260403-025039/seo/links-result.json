@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://sirspeedy-tienmu.com/",
+  "timestamp": "2026-04-03T02:51:01Z",
+  "summary": {
+    "total_links": 72,
+    "ok": 71,
+    "broken": 1
+  },
+  "internal": {
+    "ok": 65,
+    "broken": 0
+  },
+  "external": {
+    "ok": 6,
+    "broken": 1
+  },
+  "broken_links": {
+    "internal": [],
+    "external": [{"url": "https://www.linkedin.com/company/sir-speedy-tienmu/", "status": "999"}]
+  }
+}
