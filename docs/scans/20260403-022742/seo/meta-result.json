@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-03T02:28:01Z",
+  "summary": {
+    "pass": 0,
+    "fail": 10,
+    "total": 10
+  },
+  "checks": [{"item": "title", "status": "fail", "expected": "存在且≤60字", "actual": "H&amp;M克笛衛廚 &#8211; TOTO衛浴、石材檯面、按摩浴缸、浴室修繕、手造檯面、浴櫃、浴缸、浴室換氣暖風機、純銅配件、微電腦馬桶座、換氣機、電腦馬桶蓋、防水浴櫃、台製蒸氣機、玻璃門、淋浴間五金"},{"item": "description", "status": "fail", "expected": "存在且≤155字", "actual": "..."},{"item": "og:title", "status": "fail", "expected": "必須存在", "actual": ""},{"item": "og:description", "status": "fail", "expected": "必須存在", "actual": ""},{"item": "og:image", "status": "fail", "expected": "必須存在", "actual": ""},{"item": "og:url", "status": "fail", "expected": "必須存在", "actual": ""},{"item": "og:type", "status": "fail", "expected": "article", "actual": ""},{"item": "article:published_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "article:modified_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "twitter:card", "status": "fail", "expected": "summary_large_image", "actual": ""}]
+}
