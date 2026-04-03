@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "url": "https://yesmanphoto.com.tw/",
+  "timestamp": "2026-04-03T02:16:44Z",
+  "summary": {
+    "pass": 13,
+    "total": 34,
+    "score": 38
+  },
+  "categories": {
+    "meta": {"pass": 9, "total": 10},
+    "schema": {"pass": 0, "total": 1},
+    "sge": {"pass": 0, "total": 5},
+    "eeat": {"pass": 0, "total": 6},
+    "cwv": {"pass": 4, "total": 8},
+    "ymyl": {"pass": 0, "total": 4, "applicable": true}
+  }
+}

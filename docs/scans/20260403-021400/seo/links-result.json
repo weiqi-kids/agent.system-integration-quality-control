@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "url": "https://yesmanphoto.com.tw/",
+  "timestamp": "2026-04-03T02:16:41Z",
+  "summary": {
+    "total_links": 243,
+    "ok": 233,
+    "broken": 10
+  },
+  "internal": {
+    "ok": 228,
+    "broken": 10
+  },
+  "external": {
+    "ok": 5,
+    "broken": 0
+  },
+  "broken_links": {
+    "internal": [{"url": "https://yesmanphoto.com.tw/korean-id-photo/", "status": "503"},{"url": "https://yesmanphoto.com.tw/newborn-photo-shoot-at-mansion-b/", "status": "503"},{"url": "https://yesmanphoto.com.tw/newborn-photos-taken-at-the-house-a/", "status": "503"},{"url": "https://yesmanphoto.com.tw/newborn-photos-taken-in-the-studio-a/", "status": "503"},{"url": "https://yesmanphoto.com.tw/newborn-photos-taken-in-the-studio-b/", "status": "503"},{"url": "https://yesmanphoto.com.tw/pregnant-women-go-to-the-studio-for-filming/", "status": "503"},{"url": "https://yesmanphoto.com.tw/seize-the-week/", "status": "503"},{"url": "https://yesmanphoto.com.tw/service/", "status": "503"},{"url": "https://yesmanphoto.com.tw/wp-content/uploads/elementor/css/post-11.css?ver=1775099694", "status": "404"},{"url": "https://yesmanphoto.com.tw/wp-content/uploads/elementor/css/post-2414.css?ver=1775100390", "status": "404"}],
+    "external": []
+  }
+}
