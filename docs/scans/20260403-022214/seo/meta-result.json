@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "timestamp": "2026-04-03T02:23:09Z",
+  "summary": {
+    "pass": 7,
+    "fail": 3,
+    "total": 10
+  },
+  "checks": [{"item": "title", "status": "pass", "value": "霜豪冷氣空調-高雄 冷氣空調專賣|冷氣保養|冷氣維修服務|空調專業安裝|灌冷媒|冷氣清洗 推薦"},{"item": "description", "status": "pass", "value": "服務地區為 高雄、屏東、台南地區，擁有合格冷凍空調裝修技術士證照，代理各大廠牌空調冷氣以及各大廠牌的..."},{"item": "og:title", "status": "pass", "value": "霜豪冷氣空調-高雄 冷氣空調專賣|冷氣保養|冷氣維修服務|空調專業安裝|灌冷媒|..."},{"item": "og:description", "status": "pass", "value": "服務地區為 高雄、屏東、台南地區，擁有合格冷凍空調裝修技術士證照，代理各大廠牌空..."},{"item": "og:image", "status": "fail", "expected": "必須存在", "actual": ""},{"item": "og:url", "status": "pass", "value": "https://a0925172095.com/"},{"item": "og:type", "status": "fail", "expected": "article", "actual": "website"},{"item": "article:published_time", "status": "fail", "expected": "ISO 8601 格式", "actual": ""},{"item": "article:modified_time", "status": "pass", "value": "2023-09-04T10:35:50+00:00"},{"item": "twitter:card", "status": "pass", "value": "summary_large_image"}]
+}
